@@ -1,0 +1,98 @@
+/* Variáveis para controle do tema */
+:root {
+  --bg-color: #fcf8f9;
+  --text-color: #333333;
+  --card-bg: #ffffff;
+  --primary-color: #d87093; /* Rosa tom suave */
+  --border-color: #eee0e5;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --card-bg: #2a2a2a;
+  --primary-color: #ff94b8;
+  --border-color: #3d3d3d;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0 20px; /* Espaçamento lateral */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Disposição das postagens em grade */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.post-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.post-card h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+/* Estilo do Botão de Tema */
+.theme-toggle-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog de Extensão de Cílios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+    <h1>Lashes Blog</h1>
+    <button id="theme-toggle" class="theme-toggle-btn">Modo Escuro</button>
+  </header>
+
+  <main>
+    <section class="post-grid">
+      <!-- Postagem 1 -->
+      <article class="post-card">
+        <h2>Cuidados Pós-Extensão de Cílios</h2>
+        <p>Saiba o que fazer nas primeiras 24 horas para garantir maior retenção dos fios...</p>
+      </article>
+
+      <!-- Postagem 2 -->
+      <article class="post-card">
+        <h2>Técnica Fio a Fio vs Volume Russo</h2>
+        <p>Entenda a diferença entre cada estilo e descubra qual se adapta melhor ao seu público...</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
